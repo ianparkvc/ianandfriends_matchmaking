@@ -208,75 +208,7 @@ export default function IanAndFriendsLanding() {
             const s = document.createElement("style"); s.id = "ianf-css"; s.textContent = CSS
             document.head.appendChild(s)
         }
-        /* Viral Loops */
-        if (!document.getElementById("viral-loops-loader")) {
-            const vl = document.createElement("script")
-            vl.id = "viral-loops-loader"
-            vl.src = "https://app.viral-loops.com/widgetsV2/core/loader.js"
-            vl.setAttribute("data-campaign-id", "6qp2fEILlxFgbATl7973e1QSSKM")
-            document.head.appendChild(vl)
-        }
-
-        /* Inject styles into Viral Loops shadow DOM */
-        const VL_CSS = `
-            @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
-            @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&display=swap');
-            * { font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif !important; }
-            h2, h3, p, label, span, div { font-family: 'Pretendard', -apple-system, sans-serif !important; }
-            h1, h2 {
-                font-family: 'Pretendard', -apple-system, sans-serif !important;
-                font-weight: 300 !important;
-                letter-spacing: -0.5px !important;
-                background: linear-gradient(135deg, ${C.text} 0%, ${C.rose} 100%) !important;
-                -webkit-background-clip: text !important;
-                -webkit-text-fill-color: transparent !important;
-                background-clip: text !important;
-            }
-            h3 { color: ${C.textSoft} !important; font-weight: 300 !important; font-size: 14px !important; letter-spacing: 0.2px !important; }
-            p, span, div, label { color: ${C.textMuted} !important; }
-            a { color: ${C.rose} !important; }
-            button, [type="submit"] {
-                background: linear-gradient(135deg, ${C.roseDeep} 0%, ${C.rose} 50%, ${C.gold} 100%) !important;
-                border: none !important;
-                border-radius: 48px !important;
-                font-weight: 500 !important;
-                letter-spacing: 0.3px !important;
-                color: #FFFFFF !important;
-                box-shadow: 0 4px 20px rgba(212,112,126,0.25) !important;
-                transition: all 0.35s ease !important;
-            }
-            button:hover, [type="submit"]:hover {
-                box-shadow: 0 8px 32px rgba(212,112,126,0.35) !important;
-                transform: translateY(-2px) !important;
-            }
-            input {
-                border-radius: 16px !important;
-                border: 1px solid rgba(212,112,126,0.15) !important;
-                font-weight: 300 !important;
-                color: ${C.text} !important;
-                transition: border-color 0.3s ease !important;
-            }
-            input::placeholder {
-                color: ${C.textMuted} !important;
-                font-weight: 300 !important;
-            }
-            input:focus {
-                border-color: ${C.rose} !important;
-                box-shadow: 0 0 0 3px rgba(212,112,126,0.08) !important;
-                outline: none !important;
-            }
-        `
-        const injectVLStyles = () => {
-            const widget = document.querySelector("form-widget")
-            if (widget?.shadowRoot && !widget.shadowRoot.getElementById("ianf-vl-css")) {
-                const style = document.createElement("style")
-                style.id = "ianf-vl-css"
-                style.textContent = VL_CSS
-                widget.shadowRoot.appendChild(style)
-            }
-        }
-        const vlTimer = setInterval(injectVLStyles, 500)
-        setTimeout(() => clearInterval(vlTimer), 10000)
+        /* Google Form URL */
 
     }, [])
 
@@ -290,17 +222,17 @@ export default function IanAndFriendsLanding() {
             {/* ═══ FULL-PAGE GRADIENT MESH ═══ */}
             <div style={{ position: "fixed", top: 0, left: 0, width: "100%", height: "100%", pointerEvents: "none", zIndex: 0, overflow: "hidden" }}>
                 {/* warm base gradient */}
-                <div style={{ position: "absolute", inset: 0, background: `linear-gradient(165deg, ${C.bg} 0%, ${C.bgWarm} 20%, rgba(245,208,214,0.15) 35%, ${C.bg} 50%, rgba(232,213,184,0.18) 65%, ${C.bgWarm} 80%, ${C.bg} 100%)` }} />
+                <div style={{ position: "absolute", inset: 0, background: `linear-gradient(165deg, ${C.bg} 0%, ${C.bgWarm} 20%, rgba(245,208,214,0.25) 35%, ${C.bg} 50%, rgba(232,213,184,0.28) 65%, ${C.bgWarm} 80%, ${C.bg} 100%)` }} />
                 {/* large rose glow - top left */}
-                <div style={{ position: "absolute", top: "-15%", left: "-20%", width: "70vw", height: "70vw", borderRadius: "50%", background: `radial-gradient(circle, rgba(212,112,126,0.1) 0%, rgba(212,112,126,0.04) 40%, transparent 65%)`, filter: "blur(40px)", animation: "ianf-mesh-move 20s ease-in-out infinite" }} />
+                <div style={{ position: "absolute", top: "-15%", left: "-20%", width: "70vw", height: "70vw", borderRadius: "50%", background: `radial-gradient(circle, rgba(212,112,126,0.18) 0%, rgba(212,112,126,0.07) 40%, transparent 65%)`, filter: "blur(40px)", animation: "ianf-mesh-move 20s ease-in-out infinite" }} />
                 {/* gold glow - center right */}
-                <div style={{ position: "absolute", top: "25%", right: "-15%", width: "60vw", height: "60vw", borderRadius: "50%", background: `radial-gradient(circle, rgba(201,168,124,0.12) 0%, rgba(201,168,124,0.04) 45%, transparent 65%)`, filter: "blur(50px)", animation: "ianf-mesh-move 25s ease-in-out infinite 5s" }} />
+                <div style={{ position: "absolute", top: "25%", right: "-15%", width: "60vw", height: "60vw", borderRadius: "50%", background: `radial-gradient(circle, rgba(201,168,124,0.2) 0%, rgba(201,168,124,0.07) 45%, transparent 65%)`, filter: "blur(50px)", animation: "ianf-mesh-move 25s ease-in-out infinite 5s" }} />
                 {/* rose mist - center */}
-                <div style={{ position: "absolute", top: "40%", left: "20%", width: "55vw", height: "55vw", borderRadius: "50%", background: `radial-gradient(circle, rgba(245,208,214,0.1) 0%, transparent 55%)`, filter: "blur(60px)", animation: "ianf-mesh-move 22s ease-in-out infinite 3s" }} />
+                <div style={{ position: "absolute", top: "40%", left: "20%", width: "55vw", height: "55vw", borderRadius: "50%", background: `radial-gradient(circle, rgba(245,208,214,0.18) 0%, transparent 55%)`, filter: "blur(60px)", animation: "ianf-mesh-move 22s ease-in-out infinite 3s" }} />
                 {/* warm glow - bottom left */}
-                <div style={{ position: "absolute", bottom: "0%", left: "-10%", width: "50vw", height: "50vw", borderRadius: "50%", background: `radial-gradient(circle, rgba(255,239,234,0.15) 0%, rgba(245,208,214,0.06) 40%, transparent 60%)`, filter: "blur(45px)", animation: "ianf-mesh-move 18s ease-in-out infinite 8s" }} />
+                <div style={{ position: "absolute", bottom: "0%", left: "-10%", width: "50vw", height: "50vw", borderRadius: "50%", background: `radial-gradient(circle, rgba(255,239,234,0.25) 0%, rgba(245,208,214,0.1) 40%, transparent 60%)`, filter: "blur(45px)", animation: "ianf-mesh-move 18s ease-in-out infinite 8s" }} />
                 {/* gold accent - bottom right */}
-                <div style={{ position: "absolute", bottom: "15%", right: "0%", width: "45vw", height: "45vw", borderRadius: "50%", background: `radial-gradient(circle, rgba(201,168,124,0.09) 0%, transparent 55%)`, filter: "blur(55px)", animation: "ianf-mesh-move 23s ease-in-out infinite 12s" }} />
+                <div style={{ position: "absolute", bottom: "15%", right: "0%", width: "45vw", height: "45vw", borderRadius: "50%", background: `radial-gradient(circle, rgba(201,168,124,0.16) 0%, transparent 55%)`, filter: "blur(55px)", animation: "ianf-mesh-move 23s ease-in-out infinite 12s" }} />
                 {/* subtle grain overlay */}
                 <div style={{ position: "absolute", inset: 0, opacity: 0.03, backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`, backgroundSize: "128px 128px" }} />
             </div>
@@ -339,42 +271,23 @@ export default function IanAndFriendsLanding() {
                 </Reveal>
             </section>
 
-            {/* ═══ CTA + VIRAL LOOPS (TOP) ═══ */}
-            <section id="waitlist" style={{ padding: "0 24px 40px", textAlign: "center", position: "relative", marginTop: -40 }}>
-                <div style={{ position: "absolute", top: "30%", left: "50%", width: "min(500px, 85vw)", height: 220, borderRadius: "50%", background: `radial-gradient(ellipse, ${C.bgTint} 0%, transparent 65%)`, transform: "translate(-50%, -50%)", pointerEvents: "none", opacity: 0.6 }} />
-
+            {/* ═══ CTA (TOP) ═══ */}
+            <section id="waitlist" style={{ padding: "0 24px 40px", textAlign: "center", position: "relative", marginTop: -16 }}>
                 <Reveal>
-                    <div style={{ position: "relative", maxWidth: 480, margin: "0 auto" }}>
-                        <div
-                            className="ianf-glass-3d"
-                            style={{ padding: "36px 28px", borderRadius: 24, marginBottom: 20 }}
-                            dangerouslySetInnerHTML={{
-                                __html: '<form-widget ucid="6qp2fEILlxFgbATl7973e1QSSKM"></form-widget>'
-                            }}
-                        />
-                    </div>
+                    <a
+                        href="https://forms.gle/Q2x2LbGZskiyTRQ69"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                            textDecoration: "none", display: "inline-block", padding: "18px 56px", fontSize: 15,
+                            background: `linear-gradient(135deg, ${C.roseDeep} 0%, ${C.rose} 50%, ${C.gold} 100%)`,
+                            color: "#FFFFFF", borderRadius: 48, fontFamily: F.sans, fontWeight: 500,
+                            letterSpacing: "0.3px", boxShadow: "0 4px 20px rgba(212,112,126,0.25)",
+                            border: "none", cursor: "pointer", transition: "all 0.35s ease",
+                        }}
+                    >멤버십 신청하기</a>
                 </Reveal>
-
-                <Reveal delay={0.1}><p style={{ fontSize: 11.5, color: C.textMuted, marginTop: 8, letterSpacing: "0.2px", position: "relative" }}>지금 가입하면 멤버십 무료 &nbsp;&middot;&nbsp; 모든 정보는 안전하게 보호됩니다</p></Reveal>
-            </section>
-
-            <Sep />
-
-            {/* ═══ WHY ═══ */}
-            <section style={{ padding: "0 24px 80px", maxWidth: 960, margin: "0 auto", textAlign: "center" }}>
-                <Reveal><p style={label}>Why Us</p></Reveal>
-                <Reveal delay={0.08}><h2 style={{ ...heading, marginBottom: 14, ...ko }}>왜 이안과 친구들인가</h2></Reveal>
-                <Reveal delay={0.16}><p style={{ color: C.textSoft, fontSize: 14.5, maxWidth: 400, margin: "0 auto 52px", lineHeight: 1.9, ...ko }}>좋은 사람은 분명 있습니다.<br />다만 만날 방법이 없었을 뿐.</p></Reveal>
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: 20 }}>
-                    {PILLARS.map((item, i) => (
-                        <Reveal key={item.title} delay={0.08 * i}>
-                            <div className="ianf-glass-card" style={{ padding: "44px 28px", textAlign: "center" }}>
-                                <h3 style={{ fontFamily: F.serif, fontSize: 19, fontWeight: 400, margin: "0 0 12px", color: C.text, ...ko }}>{item.title}</h3>
-                                <p style={{ fontSize: 13.5, color: C.textSoft, margin: 0, lineHeight: 1.85, ...ko }}>{item.desc}</p>
-                            </div>
-                        </Reveal>
-                    ))}
-                </div>
+                <Reveal delay={0.1}><p style={{ fontSize: 11.5, color: C.textMuted, marginTop: 16, letterSpacing: "0.2px", position: "relative" }}>지금 가입하면 멤버십 무료 &nbsp;&middot;&nbsp; 모든 정보는 안전하게 보호됩니다</p></Reveal>
             </section>
 
             <Sep />
@@ -399,30 +312,6 @@ export default function IanAndFriendsLanding() {
                         <p style={{ fontSize: 12.5, color: C.text, lineHeight: 2.1, textAlign: "center", fontStyle: "italic", fontFamily: F.serif, fontWeight: 300, ...ko }}>
                             "누군가와 평생 친구이자 동맹이 되는<br />가장 확실한 길은,<br />그 사람에게 좋은 배우자를 소개해주는 것이다."
                         </p>
-                    </div>
-                </Reveal>
-            </section>
-
-            <Sep />
-
-            {/* ═══ PROCESS ═══ */}
-            <section style={{ padding: "0 24px 80px", maxWidth: 580, margin: "0 auto" }}>
-                <div style={{ textAlign: "center", marginBottom: 48 }}>
-                    <Reveal><p style={label}>Process</p></Reveal>
-                    <Reveal delay={0.08}><h2 style={{ ...heading, ...ko }}>어떻게 진행되나요</h2></Reveal>
-                </div>
-                <Reveal delay={0.16}>
-                    <div className="ianf-glass-3d" style={{ padding: "40px 32px", position: "relative" }}>
-                        {STEPS.map((step, i) => (
-                            <div key={step.num} style={{ display: "flex", gap: 20, marginBottom: i < STEPS.length - 1 ? 32 : 0, alignItems: "flex-start", position: "relative" }}>
-                                <span style={{ fontFamily: F.display, fontSize: 13, color: C.rose, fontWeight: 300, fontStyle: "italic", letterSpacing: "1px", flexShrink: 0, width: 24, marginTop: 3, opacity: 0.7 }}>{step.num}</span>
-                                <div style={{ flex: 1 }}>
-                                    <h3 style={{ fontFamily: F.serif, fontSize: 17, fontWeight: 400, margin: "0 0 4px", color: C.text, ...ko }}>{step.title}</h3>
-                                    <p style={{ fontSize: 13.5, color: C.textSoft, margin: 0, lineHeight: 1.8, ...ko }}>{step.desc}</p>
-                                </div>
-                                {i < STEPS.length - 1 && <div style={{ position: "absolute", bottom: -17, left: 10, width: 1, height: 10, background: C.roseLight, opacity: 0.4 }} />}
-                            </div>
-                        ))}
                     </div>
                 </Reveal>
             </section>
@@ -478,12 +367,55 @@ export default function IanAndFriendsLanding() {
 
             <Sep />
 
+            {/* ═══ WHY ═══ */}
+            <section style={{ padding: "0 24px 80px", maxWidth: 960, margin: "0 auto", textAlign: "center" }}>
+                <Reveal><p style={label}>Why Us</p></Reveal>
+                <Reveal delay={0.08}><h2 style={{ ...heading, marginBottom: 14, ...ko }}>왜 이안과 친구들인가</h2></Reveal>
+                <Reveal delay={0.16}><p style={{ color: C.textSoft, fontSize: 14.5, maxWidth: 400, margin: "0 auto 52px", lineHeight: 1.9, ...ko }}>좋은 사람은 분명 있습니다.<br />다만 만날 방법이 없었을 뿐.</p></Reveal>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: 20 }}>
+                    {PILLARS.map((item, i) => (
+                        <Reveal key={item.title} delay={0.08 * i}>
+                            <div className="ianf-glass-card" style={{ padding: "44px 28px", textAlign: "center" }}>
+                                <h3 style={{ fontFamily: F.serif, fontSize: 19, fontWeight: 400, margin: "0 0 12px", color: C.text, ...ko }}>{item.title}</h3>
+                                <p style={{ fontSize: 13.5, color: C.textSoft, margin: 0, lineHeight: 1.85, ...ko }}>{item.desc}</p>
+                            </div>
+                        </Reveal>
+                    ))}
+                </div>
+            </section>
+
+            <Sep />
+
+            {/* ═══ PROCESS ═══ */}
+            <section style={{ padding: "0 24px 80px", maxWidth: 580, margin: "0 auto" }}>
+                <div style={{ textAlign: "center", marginBottom: 48 }}>
+                    <Reveal><p style={label}>Process</p></Reveal>
+                    <Reveal delay={0.08}><h2 style={{ ...heading, ...ko }}>어떻게 진행되나요</h2></Reveal>
+                </div>
+                <Reveal delay={0.16}>
+                    <div className="ianf-glass-3d" style={{ padding: "40px 32px", position: "relative" }}>
+                        {STEPS.map((step, i) => (
+                            <div key={step.num} style={{ display: "flex", gap: 20, marginBottom: i < STEPS.length - 1 ? 32 : 0, alignItems: "flex-start", position: "relative" }}>
+                                <span style={{ fontFamily: F.display, fontSize: 13, color: C.rose, fontWeight: 300, fontStyle: "italic", letterSpacing: "1px", flexShrink: 0, width: 24, marginTop: 3, opacity: 0.7 }}>{step.num}</span>
+                                <div style={{ flex: 1 }}>
+                                    <h3 style={{ fontFamily: F.serif, fontSize: 17, fontWeight: 400, margin: "0 0 4px", color: C.text, ...ko }}>{step.title}</h3>
+                                    <p style={{ fontSize: 13.5, color: C.textSoft, margin: 0, lineHeight: 1.8, ...ko }}>{step.desc}</p>
+                                </div>
+                                {i < STEPS.length - 1 && <div style={{ position: "absolute", bottom: -17, left: 10, width: 1, height: 10, background: C.roseLight, opacity: 0.4 }} />}
+                            </div>
+                        ))}
+                    </div>
+                </Reveal>
+            </section>
+
+            <Sep />
+
             {/* ═══ BOTTOM CTA ═══ */}
             <section style={{ padding: "0 24px 100px", textAlign: "center", position: "relative" }}>
                 <div style={{ position: "absolute", top: "45%", left: "50%", width: "min(500px, 85vw)", height: 220, borderRadius: "50%", background: `radial-gradient(ellipse, ${C.bgTint} 0%, transparent 65%)`, transform: "translate(-50%, -50%)", pointerEvents: "none", opacity: 0.6 }} />
                 <Reveal><h2 style={{ fontFamily: F.serif, fontSize: "clamp(1.7rem, 3.5vw, 2.4rem)", fontWeight: 200, margin: "0 0 12px", lineHeight: 1.35, position: "relative", ...ko }}>지금, 첫 번째 멤버가 되세요</h2></Reveal>
                 <Reveal delay={0.08}><p style={{ color: C.textSoft, fontSize: 14, maxWidth: 360, margin: "0 auto 40px", lineHeight: 1.9, position: "relative", ...ko }}>초기 멤버에게는 멤버십이 무료로 제공됩니다.<br />자리가 한정되어 있습니다.</p></Reveal>
-                <Reveal delay={0.16}><a href="#waitlist" style={{ textDecoration: "none", display: "inline-block", padding: "16px 48px", fontSize: 15, whiteSpace: "nowrap", position: "relative", background: `linear-gradient(135deg, ${C.roseDeep} 0%, ${C.rose} 50%, ${C.gold} 100%)`, color: "#FFFFFF", borderRadius: 48, fontFamily: F.sans, fontWeight: 500, letterSpacing: "0.3px", boxShadow: "0 4px 20px rgba(212,112,126,0.25)", border: "none", cursor: "pointer", transition: "all 0.35s ease" }} onClick={(e) => { e.preventDefault(); document.getElementById("waitlist")?.scrollIntoView({ behavior: "smooth" }) }}>대기자 명단 등록하기</a></Reveal>
+                <Reveal delay={0.16}><a href="https://forms.gle/Q2x2LbGZskiyTRQ69" target="_blank" rel="noopener noreferrer" style={{ textDecoration: "none", display: "inline-block", padding: "18px 56px", fontSize: 15, whiteSpace: "nowrap", position: "relative", background: `linear-gradient(135deg, ${C.roseDeep} 0%, ${C.rose} 50%, ${C.gold} 100%)`, color: "#FFFFFF", borderRadius: 48, fontFamily: F.sans, fontWeight: 500, letterSpacing: "0.3px", boxShadow: "0 4px 20px rgba(212,112,126,0.25)", border: "none", cursor: "pointer", transition: "all 0.35s ease" }}>멤버십 신청하기</a></Reveal>
             </section>
 
             {/* ═══ FOOTER ═══ */}
